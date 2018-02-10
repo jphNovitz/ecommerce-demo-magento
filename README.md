@@ -1,1 +1,5 @@
-# ecommerce-demos
+# ecommerce-demo-magento  
+
+first magento project
+
+hello world
