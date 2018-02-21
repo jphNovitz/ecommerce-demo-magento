@@ -1,4 +1,9 @@
 <?php
+/*
+ * basic module file definition
+ * just skeleton
+ *  2018 - jphNovitz
+ */
 if (!defined('_PS_VERSION_'))
 {
     exit;
@@ -32,6 +37,9 @@ class Test extends Module{
     {
         if (!parent::install())
             return false;
+        $this->registerHook('displayHome');
+        Configuration::updateValue('MYMODULE_NAME', 'test');
+
         return true;
     }
     public function uninstall()
@@ -39,5 +47,10 @@ class Test extends Module{
         if (!parent::uninstall())
             return false;
         return true;
+    }
+
+    public function hookDisplayHome(){
+        return $this->display(__file__, 'views/test.tpl');
+
     }
 }
